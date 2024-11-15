@@ -1,0 +1,17 @@
+syntax = "proto3";
+package mdcchain.quantumdata;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "mdcchain/quantumdata/params.proto";
+
+option go_package = "mdc-chain/x/quantumdata/types";
+
+// GenesisState defines the quantumdata module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}

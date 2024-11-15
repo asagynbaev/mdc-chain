@@ -76,6 +76,8 @@ import (
 	ibckeeper "github.com/cosmos/ibc-go/v8/modules/core/keeper"
 
 	mdcchainmodulekeeper "mdc-chain/x/mdcchain/keeper"
+	quantumdatamodulekeeper "mdc-chain/x/quantumdata/keeper"
+
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 
 	"mdc-chain/docs"
@@ -141,7 +143,8 @@ type App struct {
 	ScopedICAHostKeeper       capabilitykeeper.ScopedKeeper
 	ScopedKeepers             map[string]capabilitykeeper.ScopedKeeper
 
-	MdcchainKeeper mdcchainmodulekeeper.Keeper
+	MdcchainKeeper    mdcchainmodulekeeper.Keeper
+	QuantumdataKeeper quantumdatamodulekeeper.Keeper
 	// this line is used by starport scaffolding # stargate/app/keeperDeclaration
 
 	// simulation manager
@@ -246,6 +249,7 @@ func New(
 		&app.GroupKeeper,
 		&app.CircuitBreakerKeeper,
 		&app.MdcchainKeeper,
+		&app.QuantumdataKeeper,
 		// this line is used by starport scaffolding # stargate/app/keeperDefinition
 	); err != nil {
 		panic(err)

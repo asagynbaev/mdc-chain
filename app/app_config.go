@@ -54,8 +54,11 @@ import (
 	"google.golang.org/protobuf/types/known/durationpb"
 
 	mdcchainmodulev1 "mdc-chain/api/mdcchain/mdcchain/module"
+	quantumdatamodulev1 "mdc-chain/api/mdcchain/quantumdata/module"
 	_ "mdc-chain/x/mdcchain/module" // import for side-effects
 	mdcchainmoduletypes "mdc-chain/x/mdcchain/types"
+	_ "mdc-chain/x/quantumdata/module" // import for side-effects
+	quantumdatamoduletypes "mdc-chain/x/quantumdata/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 )
 
@@ -94,6 +97,7 @@ var (
 		circuittypes.ModuleName,
 		// chain modules
 		mdcchainmoduletypes.ModuleName,
+		quantumdatamoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
 	}
 
@@ -119,6 +123,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		mdcchainmoduletypes.ModuleName,
+		quantumdatamoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/beginBlockers
 	}
 
@@ -138,6 +143,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		mdcchainmoduletypes.ModuleName,
+		quantumdatamoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/endBlockers
 	}
 
@@ -296,6 +302,10 @@ var (
 			{
 				Name:   mdcchainmoduletypes.ModuleName,
 				Config: appconfig.WrapAny(&mdcchainmodulev1.Module{}),
+			},
+			{
+				Name:   quantumdatamoduletypes.ModuleName,
+				Config: appconfig.WrapAny(&quantumdatamodulev1.Module{}),
 			},
 			// this line is used by starport scaffolding # stargate/app/moduleConfig
 		},

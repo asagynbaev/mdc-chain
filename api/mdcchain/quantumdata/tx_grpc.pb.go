@@ -20,7 +20,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Msg_UpdateParams_FullMethodName = "/mdcchain.quantumdata.Msg/UpdateParams"
+	Msg_UpdateParams_FullMethodName              = "/mdcchain.quantumdata.Msg/UpdateParams"
+	Msg_CreateQuantumDataFragment_FullMethodName = "/mdcchain.quantumdata.Msg/CreateQuantumDataFragment"
+	Msg_AccessQuantumDataFragment_FullMethodName = "/mdcchain.quantumdata.Msg/AccessQuantumDataFragment"
+	Msg_UpdateAccessConditions_FullMethodName    = "/mdcchain.quantumdata.Msg/UpdateAccessConditions"
+	Msg_UpdateQuantumDataStatus_FullMethodName   = "/mdcchain.quantumdata.Msg/UpdateQuantumDataStatus"
 )
 
 // MsgClient is the client API for Msg service.
@@ -30,6 +34,10 @@ type MsgClient interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(ctx context.Context, in *MsgUpdateParams, opts ...grpc.CallOption) (*MsgUpdateParamsResponse, error)
+	CreateQuantumDataFragment(ctx context.Context, in *MsgCreateQuantumDataFragment, opts ...grpc.CallOption) (*MsgCreateQuantumDataFragmentResponse, error)
+	AccessQuantumDataFragment(ctx context.Context, in *MsgAccessQuantumDataFragment, opts ...grpc.CallOption) (*MsgAccessQuantumDataFragmentResponse, error)
+	UpdateAccessConditions(ctx context.Context, in *MsgUpdateAccessConditions, opts ...grpc.CallOption) (*MsgUpdateAccessConditionsResponse, error)
+	UpdateQuantumDataStatus(ctx context.Context, in *MsgUpdateQuantumDataStatus, opts ...grpc.CallOption) (*MsgUpdateQuantumDataStatusResponse, error)
 }
 
 type msgClient struct {
@@ -49,6 +57,42 @@ func (c *msgClient) UpdateParams(ctx context.Context, in *MsgUpdateParams, opts 
 	return out, nil
 }
 
+func (c *msgClient) CreateQuantumDataFragment(ctx context.Context, in *MsgCreateQuantumDataFragment, opts ...grpc.CallOption) (*MsgCreateQuantumDataFragmentResponse, error) {
+	out := new(MsgCreateQuantumDataFragmentResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateQuantumDataFragment_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) AccessQuantumDataFragment(ctx context.Context, in *MsgAccessQuantumDataFragment, opts ...grpc.CallOption) (*MsgAccessQuantumDataFragmentResponse, error) {
+	out := new(MsgAccessQuantumDataFragmentResponse)
+	err := c.cc.Invoke(ctx, Msg_AccessQuantumDataFragment_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) UpdateAccessConditions(ctx context.Context, in *MsgUpdateAccessConditions, opts ...grpc.CallOption) (*MsgUpdateAccessConditionsResponse, error) {
+	out := new(MsgUpdateAccessConditionsResponse)
+	err := c.cc.Invoke(ctx, Msg_UpdateAccessConditions_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) UpdateQuantumDataStatus(ctx context.Context, in *MsgUpdateQuantumDataStatus, opts ...grpc.CallOption) (*MsgUpdateQuantumDataStatusResponse, error) {
+	out := new(MsgUpdateQuantumDataStatusResponse)
+	err := c.cc.Invoke(ctx, Msg_UpdateQuantumDataStatus_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 // All implementations must embed UnimplementedMsgServer
 // for forward compatibility
@@ -56,6 +100,10 @@ type MsgServer interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
+	CreateQuantumDataFragment(context.Context, *MsgCreateQuantumDataFragment) (*MsgCreateQuantumDataFragmentResponse, error)
+	AccessQuantumDataFragment(context.Context, *MsgAccessQuantumDataFragment) (*MsgAccessQuantumDataFragmentResponse, error)
+	UpdateAccessConditions(context.Context, *MsgUpdateAccessConditions) (*MsgUpdateAccessConditionsResponse, error)
+	UpdateQuantumDataStatus(context.Context, *MsgUpdateQuantumDataStatus) (*MsgUpdateQuantumDataStatusResponse, error)
 	mustEmbedUnimplementedMsgServer()
 }
 
@@ -65,6 +113,18 @@ type UnimplementedMsgServer struct {
 
 func (UnimplementedMsgServer) UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateParams not implemented")
+}
+func (UnimplementedMsgServer) CreateQuantumDataFragment(context.Context, *MsgCreateQuantumDataFragment) (*MsgCreateQuantumDataFragmentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateQuantumDataFragment not implemented")
+}
+func (UnimplementedMsgServer) AccessQuantumDataFragment(context.Context, *MsgAccessQuantumDataFragment) (*MsgAccessQuantumDataFragmentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AccessQuantumDataFragment not implemented")
+}
+func (UnimplementedMsgServer) UpdateAccessConditions(context.Context, *MsgUpdateAccessConditions) (*MsgUpdateAccessConditionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAccessConditions not implemented")
+}
+func (UnimplementedMsgServer) UpdateQuantumDataStatus(context.Context, *MsgUpdateQuantumDataStatus) (*MsgUpdateQuantumDataStatusResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateQuantumDataStatus not implemented")
 }
 func (UnimplementedMsgServer) mustEmbedUnimplementedMsgServer() {}
 
@@ -97,6 +157,78 @@ func _Msg_UpdateParams_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_CreateQuantumDataFragment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateQuantumDataFragment)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateQuantumDataFragment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateQuantumDataFragment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateQuantumDataFragment(ctx, req.(*MsgCreateQuantumDataFragment))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_AccessQuantumDataFragment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgAccessQuantumDataFragment)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).AccessQuantumDataFragment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_AccessQuantumDataFragment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).AccessQuantumDataFragment(ctx, req.(*MsgAccessQuantumDataFragment))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_UpdateAccessConditions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgUpdateAccessConditions)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).UpdateAccessConditions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_UpdateAccessConditions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).UpdateAccessConditions(ctx, req.(*MsgUpdateAccessConditions))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_UpdateQuantumDataStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgUpdateQuantumDataStatus)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).UpdateQuantumDataStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_UpdateQuantumDataStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).UpdateQuantumDataStatus(ctx, req.(*MsgUpdateQuantumDataStatus))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Msg_ServiceDesc is the grpc.ServiceDesc for Msg service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -107,6 +239,22 @@ var Msg_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateParams",
 			Handler:    _Msg_UpdateParams_Handler,
+		},
+		{
+			MethodName: "CreateQuantumDataFragment",
+			Handler:    _Msg_CreateQuantumDataFragment_Handler,
+		},
+		{
+			MethodName: "AccessQuantumDataFragment",
+			Handler:    _Msg_AccessQuantumDataFragment_Handler,
+		},
+		{
+			MethodName: "UpdateAccessConditions",
+			Handler:    _Msg_UpdateAccessConditions_Handler,
+		},
+		{
+			MethodName: "UpdateQuantumDataStatus",
+			Handler:    _Msg_UpdateQuantumDataStatus_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

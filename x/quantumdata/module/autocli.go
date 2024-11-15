@@ -28,6 +28,30 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					RpcMethod: "UpdateParams",
 					Skip:      true, // skipped because authority gated
 				},
+				{
+					RpcMethod:      "CreateQuantumDataFragment",
+					Use:            "create-quantum-data-fragment [id] [data] [expiry] [access-level]",
+					Short:          "Send a createQuantumDataFragment tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}, {ProtoField: "data"}, {ProtoField: "expiry"}, {ProtoField: "accessLevel"}},
+				},
+				{
+					RpcMethod:      "AccessQuantumDataFragment",
+					Use:            "access-quantum-data-fragment [id]",
+					Short:          "Send a accessQuantumDataFragment tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
+				},
+				{
+					RpcMethod:      "UpdateAccessConditions",
+					Use:            "update-access-conditions [id] [conditions]",
+					Short:          "Send a updateAccessConditions tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}, {ProtoField: "conditions"}},
+				},
+				{
+					RpcMethod:      "UpdateQuantumDataStatus",
+					Use:            "update-quantum-data-status [id] [new-status]",
+					Short:          "Send a updateQuantumDataStatus tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}, {ProtoField: "newStatus"}},
+				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},
 		},

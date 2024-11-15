@@ -36,8 +36,6 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 type MsgUpdateParams struct {
 	// authority is the address that controls the module (defaults to x/gov unless overwritten).
 	Authority string `protobuf:"bytes,1,opt,name=authority,proto3" json:"authority,omitempty"`
-	// params defines the module parameters to update.
-	//
 	// NOTE: All parameters must be supplied.
 	Params Params `protobuf:"bytes,2,opt,name=params,proto3" json:"params"`
 }
@@ -127,36 +125,453 @@ func (m *MsgUpdateParamsResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgUpdateParamsResponse proto.InternalMessageInfo
 
+type MsgCreateQuantumDataFragment struct {
+	Creator     string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Id          string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
+	Data        string `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	Expiry      string `protobuf:"bytes,4,opt,name=expiry,proto3" json:"expiry,omitempty"`
+	AccessLevel string `protobuf:"bytes,5,opt,name=accessLevel,proto3" json:"accessLevel,omitempty"`
+}
+
+func (m *MsgCreateQuantumDataFragment) Reset()         { *m = MsgCreateQuantumDataFragment{} }
+func (m *MsgCreateQuantumDataFragment) String() string { return proto.CompactTextString(m) }
+func (*MsgCreateQuantumDataFragment) ProtoMessage()    {}
+func (*MsgCreateQuantumDataFragment) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b84b58f71b46c7d8, []int{2}
+}
+func (m *MsgCreateQuantumDataFragment) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgCreateQuantumDataFragment) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgCreateQuantumDataFragment.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgCreateQuantumDataFragment) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgCreateQuantumDataFragment.Merge(m, src)
+}
+func (m *MsgCreateQuantumDataFragment) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgCreateQuantumDataFragment) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgCreateQuantumDataFragment.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgCreateQuantumDataFragment proto.InternalMessageInfo
+
+func (m *MsgCreateQuantumDataFragment) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgCreateQuantumDataFragment) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *MsgCreateQuantumDataFragment) GetData() string {
+	if m != nil {
+		return m.Data
+	}
+	return ""
+}
+
+func (m *MsgCreateQuantumDataFragment) GetExpiry() string {
+	if m != nil {
+		return m.Expiry
+	}
+	return ""
+}
+
+func (m *MsgCreateQuantumDataFragment) GetAccessLevel() string {
+	if m != nil {
+		return m.AccessLevel
+	}
+	return ""
+}
+
+type MsgCreateQuantumDataFragmentResponse struct {
+}
+
+func (m *MsgCreateQuantumDataFragmentResponse) Reset()         { *m = MsgCreateQuantumDataFragmentResponse{} }
+func (m *MsgCreateQuantumDataFragmentResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgCreateQuantumDataFragmentResponse) ProtoMessage()    {}
+func (*MsgCreateQuantumDataFragmentResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b84b58f71b46c7d8, []int{3}
+}
+func (m *MsgCreateQuantumDataFragmentResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgCreateQuantumDataFragmentResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgCreateQuantumDataFragmentResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgCreateQuantumDataFragmentResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgCreateQuantumDataFragmentResponse.Merge(m, src)
+}
+func (m *MsgCreateQuantumDataFragmentResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgCreateQuantumDataFragmentResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgCreateQuantumDataFragmentResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgCreateQuantumDataFragmentResponse proto.InternalMessageInfo
+
+type MsgAccessQuantumDataFragment struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Id      string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (m *MsgAccessQuantumDataFragment) Reset()         { *m = MsgAccessQuantumDataFragment{} }
+func (m *MsgAccessQuantumDataFragment) String() string { return proto.CompactTextString(m) }
+func (*MsgAccessQuantumDataFragment) ProtoMessage()    {}
+func (*MsgAccessQuantumDataFragment) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b84b58f71b46c7d8, []int{4}
+}
+func (m *MsgAccessQuantumDataFragment) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgAccessQuantumDataFragment) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgAccessQuantumDataFragment.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgAccessQuantumDataFragment) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgAccessQuantumDataFragment.Merge(m, src)
+}
+func (m *MsgAccessQuantumDataFragment) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgAccessQuantumDataFragment) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgAccessQuantumDataFragment.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgAccessQuantumDataFragment proto.InternalMessageInfo
+
+func (m *MsgAccessQuantumDataFragment) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgAccessQuantumDataFragment) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+type MsgAccessQuantumDataFragmentResponse struct {
+}
+
+func (m *MsgAccessQuantumDataFragmentResponse) Reset()         { *m = MsgAccessQuantumDataFragmentResponse{} }
+func (m *MsgAccessQuantumDataFragmentResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgAccessQuantumDataFragmentResponse) ProtoMessage()    {}
+func (*MsgAccessQuantumDataFragmentResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b84b58f71b46c7d8, []int{5}
+}
+func (m *MsgAccessQuantumDataFragmentResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgAccessQuantumDataFragmentResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgAccessQuantumDataFragmentResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgAccessQuantumDataFragmentResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgAccessQuantumDataFragmentResponse.Merge(m, src)
+}
+func (m *MsgAccessQuantumDataFragmentResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgAccessQuantumDataFragmentResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgAccessQuantumDataFragmentResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgAccessQuantumDataFragmentResponse proto.InternalMessageInfo
+
+type MsgUpdateAccessConditions struct {
+	Creator    string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Id         string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
+	Conditions string `protobuf:"bytes,3,opt,name=conditions,proto3" json:"conditions,omitempty"`
+}
+
+func (m *MsgUpdateAccessConditions) Reset()         { *m = MsgUpdateAccessConditions{} }
+func (m *MsgUpdateAccessConditions) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateAccessConditions) ProtoMessage()    {}
+func (*MsgUpdateAccessConditions) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b84b58f71b46c7d8, []int{6}
+}
+func (m *MsgUpdateAccessConditions) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateAccessConditions) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateAccessConditions.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateAccessConditions) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateAccessConditions.Merge(m, src)
+}
+func (m *MsgUpdateAccessConditions) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateAccessConditions) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateAccessConditions.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateAccessConditions proto.InternalMessageInfo
+
+func (m *MsgUpdateAccessConditions) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgUpdateAccessConditions) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *MsgUpdateAccessConditions) GetConditions() string {
+	if m != nil {
+		return m.Conditions
+	}
+	return ""
+}
+
+type MsgUpdateAccessConditionsResponse struct {
+}
+
+func (m *MsgUpdateAccessConditionsResponse) Reset()         { *m = MsgUpdateAccessConditionsResponse{} }
+func (m *MsgUpdateAccessConditionsResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateAccessConditionsResponse) ProtoMessage()    {}
+func (*MsgUpdateAccessConditionsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b84b58f71b46c7d8, []int{7}
+}
+func (m *MsgUpdateAccessConditionsResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateAccessConditionsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateAccessConditionsResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateAccessConditionsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateAccessConditionsResponse.Merge(m, src)
+}
+func (m *MsgUpdateAccessConditionsResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateAccessConditionsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateAccessConditionsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateAccessConditionsResponse proto.InternalMessageInfo
+
+type MsgUpdateQuantumDataStatus struct {
+	Creator   string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Id        string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
+	NewStatus string `protobuf:"bytes,3,opt,name=newStatus,proto3" json:"newStatus,omitempty"`
+}
+
+func (m *MsgUpdateQuantumDataStatus) Reset()         { *m = MsgUpdateQuantumDataStatus{} }
+func (m *MsgUpdateQuantumDataStatus) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateQuantumDataStatus) ProtoMessage()    {}
+func (*MsgUpdateQuantumDataStatus) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b84b58f71b46c7d8, []int{8}
+}
+func (m *MsgUpdateQuantumDataStatus) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateQuantumDataStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateQuantumDataStatus.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateQuantumDataStatus) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateQuantumDataStatus.Merge(m, src)
+}
+func (m *MsgUpdateQuantumDataStatus) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateQuantumDataStatus) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateQuantumDataStatus.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateQuantumDataStatus proto.InternalMessageInfo
+
+func (m *MsgUpdateQuantumDataStatus) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgUpdateQuantumDataStatus) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *MsgUpdateQuantumDataStatus) GetNewStatus() string {
+	if m != nil {
+		return m.NewStatus
+	}
+	return ""
+}
+
+type MsgUpdateQuantumDataStatusResponse struct {
+}
+
+func (m *MsgUpdateQuantumDataStatusResponse) Reset()         { *m = MsgUpdateQuantumDataStatusResponse{} }
+func (m *MsgUpdateQuantumDataStatusResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateQuantumDataStatusResponse) ProtoMessage()    {}
+func (*MsgUpdateQuantumDataStatusResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_b84b58f71b46c7d8, []int{9}
+}
+func (m *MsgUpdateQuantumDataStatusResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateQuantumDataStatusResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateQuantumDataStatusResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateQuantumDataStatusResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateQuantumDataStatusResponse.Merge(m, src)
+}
+func (m *MsgUpdateQuantumDataStatusResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateQuantumDataStatusResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateQuantumDataStatusResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateQuantumDataStatusResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*MsgUpdateParams)(nil), "mdcchain.quantumdata.MsgUpdateParams")
 	proto.RegisterType((*MsgUpdateParamsResponse)(nil), "mdcchain.quantumdata.MsgUpdateParamsResponse")
+	proto.RegisterType((*MsgCreateQuantumDataFragment)(nil), "mdcchain.quantumdata.MsgCreateQuantumDataFragment")
+	proto.RegisterType((*MsgCreateQuantumDataFragmentResponse)(nil), "mdcchain.quantumdata.MsgCreateQuantumDataFragmentResponse")
+	proto.RegisterType((*MsgAccessQuantumDataFragment)(nil), "mdcchain.quantumdata.MsgAccessQuantumDataFragment")
+	proto.RegisterType((*MsgAccessQuantumDataFragmentResponse)(nil), "mdcchain.quantumdata.MsgAccessQuantumDataFragmentResponse")
+	proto.RegisterType((*MsgUpdateAccessConditions)(nil), "mdcchain.quantumdata.MsgUpdateAccessConditions")
+	proto.RegisterType((*MsgUpdateAccessConditionsResponse)(nil), "mdcchain.quantumdata.MsgUpdateAccessConditionsResponse")
+	proto.RegisterType((*MsgUpdateQuantumDataStatus)(nil), "mdcchain.quantumdata.MsgUpdateQuantumDataStatus")
+	proto.RegisterType((*MsgUpdateQuantumDataStatusResponse)(nil), "mdcchain.quantumdata.MsgUpdateQuantumDataStatusResponse")
 }
 
 func init() { proto.RegisterFile("mdcchain/quantumdata/tx.proto", fileDescriptor_b84b58f71b46c7d8) }
 
 var fileDescriptor_b84b58f71b46c7d8 = []byte{
-	// 330 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x92, 0xcd, 0x4d, 0x49, 0x4e,
-	0xce, 0x48, 0xcc, 0xcc, 0xd3, 0x2f, 0x2c, 0x4d, 0xcc, 0x2b, 0x29, 0xcd, 0x4d, 0x49, 0x2c, 0x49,
-	0xd4, 0x2f, 0xa9, 0xd0, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x12, 0x81, 0x49, 0xeb, 0x21, 0x49,
-	0x4b, 0x09, 0x26, 0xe6, 0x66, 0xe6, 0xe5, 0xeb, 0x83, 0x49, 0x88, 0x42, 0x29, 0xf1, 0xe4, 0xfc,
-	0xe2, 0xdc, 0xfc, 0x62, 0xfd, 0xdc, 0xe2, 0x74, 0xfd, 0x32, 0x43, 0x10, 0x05, 0x95, 0x90, 0x84,
-	0x48, 0xc4, 0x83, 0x79, 0xfa, 0x10, 0x0e, 0x54, 0x4a, 0x24, 0x3d, 0x3f, 0x3d, 0x1f, 0x22, 0x0e,
-	0x62, 0x41, 0x45, 0x15, 0xb1, 0xba, 0xa8, 0x20, 0xb1, 0x28, 0x31, 0x17, 0xaa, 0x51, 0xe9, 0x28,
-	0x23, 0x17, 0xbf, 0x6f, 0x71, 0x7a, 0x68, 0x41, 0x4a, 0x62, 0x49, 0x6a, 0x00, 0x58, 0x46, 0xc8,
-	0x8c, 0x8b, 0x33, 0xb1, 0xb4, 0x24, 0x23, 0xbf, 0x28, 0xb3, 0xa4, 0x52, 0x82, 0x51, 0x81, 0x51,
-	0x83, 0xd3, 0x49, 0xe2, 0xd2, 0x16, 0x5d, 0x11, 0xa8, 0x8d, 0x8e, 0x29, 0x29, 0x45, 0xa9, 0xc5,
-	0xc5, 0xc1, 0x25, 0x45, 0x99, 0x79, 0xe9, 0x41, 0x08, 0xa5, 0x42, 0xf6, 0x5c, 0x6c, 0x10, 0xb3,
-	0x25, 0x98, 0x14, 0x18, 0x35, 0xb8, 0x8d, 0x64, 0xf4, 0xb0, 0x79, 0x59, 0x0f, 0x62, 0x8b, 0x13,
-	0xe7, 0x89, 0x7b, 0xf2, 0x0c, 0x2b, 0x9e, 0x6f, 0xd0, 0x62, 0x0c, 0x82, 0x6a, 0xb3, 0xb2, 0x6c,
-	0x7a, 0xbe, 0x41, 0x0b, 0x61, 0x60, 0xd7, 0xf3, 0x0d, 0x5a, 0x6a, 0x70, 0x2f, 0x54, 0xa0, 0x78,
-	0x02, 0xcd, 0xcd, 0x4a, 0x92, 0x5c, 0xe2, 0x68, 0x42, 0x41, 0xa9, 0xc5, 0x05, 0xf9, 0x79, 0xc5,
-	0xa9, 0x46, 0x45, 0x5c, 0xcc, 0xbe, 0xc5, 0xe9, 0x42, 0x29, 0x5c, 0x3c, 0x28, 0xbe, 0x54, 0xc5,
-	0xee, 0x3a, 0x34, 0x53, 0xa4, 0x74, 0x89, 0x52, 0x06, 0xb3, 0x4c, 0x8a, 0xb5, 0x01, 0xe4, 0x23,
-	0x27, 0xf3, 0x13, 0x8f, 0xe4, 0x18, 0x2f, 0x3c, 0x92, 0x63, 0x7c, 0xf0, 0x48, 0x8e, 0x71, 0xc2,
-	0x63, 0x39, 0x86, 0x0b, 0x8f, 0xe5, 0x18, 0x6e, 0x3c, 0x96, 0x63, 0x88, 0x02, 0xa5, 0x12, 0x5d,
-	0x6c, 0x3e, 0x2a, 0xa9, 0x2c, 0x48, 0x2d, 0x4e, 0x62, 0x03, 0x47, 0x8b, 0x31, 0x20, 0x00, 0x00,
-	0xff, 0xff, 0xd6, 0x4a, 0x8a, 0x3b, 0x4d, 0x02, 0x00, 0x00,
+	// 604 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x55, 0xbf, 0x6f, 0xd3, 0x40,
+	0x14, 0xce, 0xf5, 0x47, 0x50, 0x5e, 0x2b, 0x10, 0xa7, 0xa8, 0x71, 0xac, 0x60, 0xd2, 0x50, 0xaa,
+	0x2a, 0x52, 0x62, 0x08, 0x12, 0x85, 0x2c, 0xa8, 0x29, 0x62, 0x22, 0x12, 0xa4, 0x82, 0x81, 0x05,
+	0x1d, 0xf6, 0xc9, 0xb5, 0x84, 0x7d, 0xc6, 0x77, 0x29, 0xc9, 0x86, 0x2a, 0xb1, 0xc0, 0xc2, 0xce,
+	0xca, 0xc0, 0x98, 0x81, 0x7f, 0x01, 0xa9, 0x63, 0xc5, 0xc4, 0x84, 0x50, 0x32, 0xe4, 0xdf, 0x40,
+	0xfe, 0x99, 0xc4, 0xc4, 0x0d, 0x11, 0x4b, 0xe2, 0x7b, 0xef, 0x7d, 0xef, 0xfb, 0xbe, 0xa7, 0x67,
+	0x1f, 0x5c, 0xb3, 0x74, 0x4d, 0x3b, 0x26, 0xa6, 0xad, 0xbe, 0xe9, 0x12, 0x5b, 0x74, 0x2d, 0x9d,
+	0x08, 0xa2, 0x8a, 0x5e, 0xdd, 0x71, 0x99, 0x60, 0x38, 0x1f, 0xa5, 0xeb, 0x53, 0x69, 0xf9, 0x2a,
+	0xb1, 0x4c, 0x9b, 0xa9, 0xfe, 0x6f, 0x50, 0x28, 0x17, 0x34, 0xc6, 0x2d, 0xc6, 0x55, 0x8b, 0x1b,
+	0xea, 0xc9, 0x6d, 0xef, 0x2f, 0x4c, 0x14, 0x83, 0xc4, 0x4b, 0xff, 0xa4, 0x06, 0x87, 0x30, 0x95,
+	0x37, 0x98, 0xc1, 0x82, 0xb8, 0xf7, 0x14, 0x46, 0xb7, 0xe7, 0x2a, 0x72, 0x88, 0x4b, 0xac, 0x10,
+	0x58, 0xf9, 0x8e, 0xe0, 0x4a, 0x9b, 0x1b, 0xcf, 0x1c, 0x9d, 0x08, 0xfa, 0xc4, 0xcf, 0xe0, 0xbb,
+	0x90, 0x23, 0x5d, 0x71, 0xcc, 0x5c, 0x53, 0xf4, 0x25, 0x54, 0x46, 0x7b, 0xb9, 0x96, 0xf4, 0xe3,
+	0x5b, 0x2d, 0x1f, 0x32, 0x1e, 0xe8, 0xba, 0x4b, 0x39, 0x3f, 0x12, 0xae, 0x69, 0x1b, 0x9d, 0x49,
+	0x29, 0x7e, 0x00, 0xd9, 0xa0, 0xb7, 0xb4, 0x52, 0x46, 0x7b, 0x1b, 0x8d, 0x52, 0x7d, 0x9e, 0xe5,
+	0x7a, 0xc0, 0xd2, 0xca, 0x9d, 0xfd, 0xba, 0x9e, 0xf9, 0x3a, 0x1e, 0x54, 0x51, 0x27, 0x84, 0x35,
+	0xef, 0x9f, 0x8e, 0x07, 0xd5, 0x49, 0xc3, 0x0f, 0xe3, 0x41, 0x75, 0x37, 0xb6, 0xd0, 0x9b, 0x31,
+	0x91, 0xd0, 0x5c, 0x29, 0x42, 0x21, 0x11, 0xea, 0x50, 0xee, 0x30, 0x9b, 0xd3, 0xca, 0x17, 0x04,
+	0xa5, 0x36, 0x37, 0x0e, 0x5d, 0x4a, 0x04, 0x7d, 0x1a, 0xf4, 0x78, 0x48, 0x04, 0x79, 0xe4, 0x12,
+	0xc3, 0xa2, 0xb6, 0xc0, 0x12, 0x5c, 0xd2, 0xbc, 0x24, 0x73, 0x03, 0xb7, 0x9d, 0xe8, 0x88, 0x2f,
+	0xc3, 0x8a, 0xa9, 0xfb, 0x6e, 0x72, 0x9d, 0x15, 0x53, 0xc7, 0x18, 0xd6, 0x3c, 0x76, 0x69, 0xd5,
+	0x8f, 0xf8, 0xcf, 0x78, 0x0b, 0xb2, 0xb4, 0xe7, 0x98, 0x6e, 0x5f, 0x5a, 0xf3, 0xa3, 0xe1, 0x09,
+	0x97, 0x61, 0x83, 0x68, 0x1a, 0xe5, 0xfc, 0x31, 0x3d, 0xa1, 0xaf, 0xa5, 0x75, 0x3f, 0x39, 0x1d,
+	0x6a, 0x6e, 0x7a, 0x76, 0x23, 0xae, 0xca, 0x2e, 0xec, 0x5c, 0xa4, 0x32, 0xb6, 0xf3, 0xdc, 0x77,
+	0x73, 0xe0, 0xf7, 0xf9, 0x2f, 0x37, 0x73, 0xf9, 0x53, 0xfb, 0xc6, 0xfc, 0x1c, 0x8a, 0xf1, 0xa4,
+	0x83, 0xea, 0x43, 0x66, 0xeb, 0xa6, 0x30, 0x99, 0xcd, 0x97, 0x18, 0xa5, 0x02, 0xa0, 0xc5, 0xb8,
+	0x70, 0xa0, 0x53, 0x91, 0x84, 0xb8, 0x1b, 0xb0, 0x9d, 0x4a, 0x1a, 0x2b, 0x73, 0x41, 0x8e, 0x8b,
+	0xa6, 0x1c, 0x1c, 0x09, 0x22, 0xba, 0xcb, 0x48, 0x2b, 0x41, 0xce, 0xa6, 0x6f, 0x03, 0x58, 0xa8,
+	0x6c, 0x12, 0x48, 0x08, 0xdb, 0x81, 0x4a, 0x3a, 0x67, 0xa4, 0xac, 0xf1, 0x79, 0x1d, 0x56, 0xdb,
+	0xdc, 0xc0, 0x3a, 0x6c, 0xce, 0xbc, 0x69, 0x37, 0xe7, 0xbf, 0x21, 0x89, 0x4d, 0x96, 0x6b, 0xff,
+	0x54, 0x16, 0xb1, 0xe1, 0x8f, 0x08, 0x8a, 0xe9, 0xdb, 0xde, 0x48, 0x6d, 0x96, 0x8a, 0x91, 0x9b,
+	0xcb, 0x63, 0x66, 0xd4, 0xa4, 0x6f, 0x6b, 0xba, 0x9a, 0x54, 0xcc, 0x05, 0x6a, 0x16, 0x6e, 0x2f,
+	0x3e, 0x45, 0xb0, 0x95, 0xb2, 0xbb, 0xea, 0x82, 0x29, 0x27, 0x01, 0xf2, 0xfe, 0x92, 0x80, 0x58,
+	0xc4, 0x7b, 0x04, 0x85, 0xb4, 0x35, 0xbd, 0xb5, 0xa0, 0xe9, 0x5f, 0x08, 0xf9, 0xde, 0xb2, 0x88,
+	0x48, 0x87, 0xbc, 0xfe, 0xce, 0xfb, 0xfc, 0xb6, 0xf6, 0xcf, 0x86, 0x0a, 0x3a, 0x1f, 0x2a, 0xe8,
+	0xf7, 0x50, 0x41, 0x9f, 0x46, 0x4a, 0xe6, 0x7c, 0xa4, 0x64, 0x7e, 0x8e, 0x94, 0xcc, 0x0b, 0xef,
+	0x4a, 0xab, 0xcd, 0xfb, 0xfc, 0x8a, 0xbe, 0x43, 0xf9, 0xab, 0xac, 0x7f, 0x87, 0xdc, 0xf9, 0x13,
+	0x00, 0x00, 0xff, 0xff, 0x8f, 0xfc, 0x58, 0x37, 0xfa, 0x06, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -174,6 +589,10 @@ type MsgClient interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(ctx context.Context, in *MsgUpdateParams, opts ...grpc.CallOption) (*MsgUpdateParamsResponse, error)
+	CreateQuantumDataFragment(ctx context.Context, in *MsgCreateQuantumDataFragment, opts ...grpc.CallOption) (*MsgCreateQuantumDataFragmentResponse, error)
+	AccessQuantumDataFragment(ctx context.Context, in *MsgAccessQuantumDataFragment, opts ...grpc.CallOption) (*MsgAccessQuantumDataFragmentResponse, error)
+	UpdateAccessConditions(ctx context.Context, in *MsgUpdateAccessConditions, opts ...grpc.CallOption) (*MsgUpdateAccessConditionsResponse, error)
+	UpdateQuantumDataStatus(ctx context.Context, in *MsgUpdateQuantumDataStatus, opts ...grpc.CallOption) (*MsgUpdateQuantumDataStatusResponse, error)
 }
 
 type msgClient struct {
@@ -193,11 +612,51 @@ func (c *msgClient) UpdateParams(ctx context.Context, in *MsgUpdateParams, opts 
 	return out, nil
 }
 
+func (c *msgClient) CreateQuantumDataFragment(ctx context.Context, in *MsgCreateQuantumDataFragment, opts ...grpc.CallOption) (*MsgCreateQuantumDataFragmentResponse, error) {
+	out := new(MsgCreateQuantumDataFragmentResponse)
+	err := c.cc.Invoke(ctx, "/mdcchain.quantumdata.Msg/CreateQuantumDataFragment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) AccessQuantumDataFragment(ctx context.Context, in *MsgAccessQuantumDataFragment, opts ...grpc.CallOption) (*MsgAccessQuantumDataFragmentResponse, error) {
+	out := new(MsgAccessQuantumDataFragmentResponse)
+	err := c.cc.Invoke(ctx, "/mdcchain.quantumdata.Msg/AccessQuantumDataFragment", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) UpdateAccessConditions(ctx context.Context, in *MsgUpdateAccessConditions, opts ...grpc.CallOption) (*MsgUpdateAccessConditionsResponse, error) {
+	out := new(MsgUpdateAccessConditionsResponse)
+	err := c.cc.Invoke(ctx, "/mdcchain.quantumdata.Msg/UpdateAccessConditions", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) UpdateQuantumDataStatus(ctx context.Context, in *MsgUpdateQuantumDataStatus, opts ...grpc.CallOption) (*MsgUpdateQuantumDataStatusResponse, error) {
+	out := new(MsgUpdateQuantumDataStatusResponse)
+	err := c.cc.Invoke(ctx, "/mdcchain.quantumdata.Msg/UpdateQuantumDataStatus", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
+	CreateQuantumDataFragment(context.Context, *MsgCreateQuantumDataFragment) (*MsgCreateQuantumDataFragmentResponse, error)
+	AccessQuantumDataFragment(context.Context, *MsgAccessQuantumDataFragment) (*MsgAccessQuantumDataFragmentResponse, error)
+	UpdateAccessConditions(context.Context, *MsgUpdateAccessConditions) (*MsgUpdateAccessConditionsResponse, error)
+	UpdateQuantumDataStatus(context.Context, *MsgUpdateQuantumDataStatus) (*MsgUpdateQuantumDataStatusResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
@@ -206,6 +665,18 @@ type UnimplementedMsgServer struct {
 
 func (*UnimplementedMsgServer) UpdateParams(ctx context.Context, req *MsgUpdateParams) (*MsgUpdateParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateParams not implemented")
+}
+func (*UnimplementedMsgServer) CreateQuantumDataFragment(ctx context.Context, req *MsgCreateQuantumDataFragment) (*MsgCreateQuantumDataFragmentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateQuantumDataFragment not implemented")
+}
+func (*UnimplementedMsgServer) AccessQuantumDataFragment(ctx context.Context, req *MsgAccessQuantumDataFragment) (*MsgAccessQuantumDataFragmentResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AccessQuantumDataFragment not implemented")
+}
+func (*UnimplementedMsgServer) UpdateAccessConditions(ctx context.Context, req *MsgUpdateAccessConditions) (*MsgUpdateAccessConditionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAccessConditions not implemented")
+}
+func (*UnimplementedMsgServer) UpdateQuantumDataStatus(ctx context.Context, req *MsgUpdateQuantumDataStatus) (*MsgUpdateQuantumDataStatusResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateQuantumDataStatus not implemented")
 }
 
 func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
@@ -230,6 +701,78 @@ func _Msg_UpdateParams_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_CreateQuantumDataFragment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateQuantumDataFragment)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateQuantumDataFragment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/mdcchain.quantumdata.Msg/CreateQuantumDataFragment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateQuantumDataFragment(ctx, req.(*MsgCreateQuantumDataFragment))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_AccessQuantumDataFragment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgAccessQuantumDataFragment)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).AccessQuantumDataFragment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/mdcchain.quantumdata.Msg/AccessQuantumDataFragment",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).AccessQuantumDataFragment(ctx, req.(*MsgAccessQuantumDataFragment))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_UpdateAccessConditions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgUpdateAccessConditions)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).UpdateAccessConditions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/mdcchain.quantumdata.Msg/UpdateAccessConditions",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).UpdateAccessConditions(ctx, req.(*MsgUpdateAccessConditions))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_UpdateQuantumDataStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgUpdateQuantumDataStatus)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).UpdateQuantumDataStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/mdcchain.quantumdata.Msg/UpdateQuantumDataStatus",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).UpdateQuantumDataStatus(ctx, req.(*MsgUpdateQuantumDataStatus))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var Msg_serviceDesc = _Msg_serviceDesc
 var _Msg_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "mdcchain.quantumdata.Msg",
@@ -238,6 +781,22 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateParams",
 			Handler:    _Msg_UpdateParams_Handler,
+		},
+		{
+			MethodName: "CreateQuantumDataFragment",
+			Handler:    _Msg_CreateQuantumDataFragment_Handler,
+		},
+		{
+			MethodName: "AccessQuantumDataFragment",
+			Handler:    _Msg_AccessQuantumDataFragment_Handler,
+		},
+		{
+			MethodName: "UpdateAccessConditions",
+			Handler:    _Msg_UpdateAccessConditions_Handler,
+		},
+		{
+			MethodName: "UpdateQuantumDataStatus",
+			Handler:    _Msg_UpdateQuantumDataStatus_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -307,6 +866,281 @@ func (m *MsgUpdateParamsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error)
 	return len(dAtA) - i, nil
 }
 
+func (m *MsgCreateQuantumDataFragment) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgCreateQuantumDataFragment) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgCreateQuantumDataFragment) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.AccessLevel) > 0 {
+		i -= len(m.AccessLevel)
+		copy(dAtA[i:], m.AccessLevel)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.AccessLevel)))
+		i--
+		dAtA[i] = 0x2a
+	}
+	if len(m.Expiry) > 0 {
+		i -= len(m.Expiry)
+		copy(dAtA[i:], m.Expiry)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Expiry)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.Data) > 0 {
+		i -= len(m.Data)
+		copy(dAtA[i:], m.Data)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Data)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgCreateQuantumDataFragmentResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgCreateQuantumDataFragmentResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgCreateQuantumDataFragmentResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgAccessQuantumDataFragment) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgAccessQuantumDataFragment) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgAccessQuantumDataFragment) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgAccessQuantumDataFragmentResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgAccessQuantumDataFragmentResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgAccessQuantumDataFragmentResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateAccessConditions) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateAccessConditions) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateAccessConditions) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Conditions) > 0 {
+		i -= len(m.Conditions)
+		copy(dAtA[i:], m.Conditions)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Conditions)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateAccessConditionsResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateAccessConditionsResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateAccessConditionsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateQuantumDataStatus) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateQuantumDataStatus) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateQuantumDataStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.NewStatus) > 0 {
+		i -= len(m.NewStatus)
+		copy(dAtA[i:], m.NewStatus)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.NewStatus)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateQuantumDataStatusResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateQuantumDataStatusResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateQuantumDataStatusResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintTx(dAtA []byte, offset int, v uint64) int {
 	offset -= sovTx(v)
 	base := offset
@@ -334,6 +1168,130 @@ func (m *MsgUpdateParams) Size() (n int) {
 }
 
 func (m *MsgUpdateParamsResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgCreateQuantumDataFragment) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Data)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Expiry)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.AccessLevel)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgCreateQuantumDataFragmentResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgAccessQuantumDataFragment) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgAccessQuantumDataFragmentResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgUpdateAccessConditions) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Conditions)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgUpdateAccessConditionsResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgUpdateQuantumDataStatus) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.NewStatus)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgUpdateQuantumDataStatusResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -490,6 +1448,822 @@ func (m *MsgUpdateParamsResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgUpdateParamsResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgCreateQuantumDataFragment) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgCreateQuantumDataFragment: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgCreateQuantumDataFragment: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Data", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Data = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Expiry", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Expiry = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 5:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field AccessLevel", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.AccessLevel = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgCreateQuantumDataFragmentResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgCreateQuantumDataFragmentResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgCreateQuantumDataFragmentResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgAccessQuantumDataFragment) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgAccessQuantumDataFragment: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgAccessQuantumDataFragment: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgAccessQuantumDataFragmentResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgAccessQuantumDataFragmentResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgAccessQuantumDataFragmentResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateAccessConditions) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateAccessConditions: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateAccessConditions: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Conditions", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Conditions = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateAccessConditionsResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateAccessConditionsResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateAccessConditionsResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateQuantumDataStatus) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateQuantumDataStatus: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateQuantumDataStatus: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field NewStatus", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.NewStatus = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateQuantumDataStatusResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateQuantumDataStatusResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateQuantumDataStatusResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:
